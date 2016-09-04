@@ -1,0 +1,12 @@
+version: '2'
+services:
+  mysql:
+    image: mysql
+  headnode:
+    image: hepdocker/gateway
+    ports:
+      - 2811:2811
+      - 1095:1095
+    volumes:
+     - /var/log/dmlite:/var/log/dmlite
+     - /var/lib/mysql:/var/lib/mysql
